@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+:root {
+  --font-family: "Poppins", sans-serif;
+
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* -----Mobile First Design----- */
+body {
+  background-color: var(--Very-Light-Gray);
+  font-family: var(--font-family);
+  line-height: 1.4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+main {
+  margin: 2em auto;
+  width: 90%;
+}
+h1 {
+  font-size: 1.6rem;
+  color: var(--Very-Dark-Blue);
+}
+h2 {
+  font-size: 1.4rem;
+  padding-bottom: 0.2em;
+  padding-top: 0.4em;
+  color: var(--Very-Dark-Blue);
+}
+p {
+  font-size: 15px;
+  font-weight: 200;
+  color: var(--Very-Dark-Blue);
+}
+img {
+  padding-top: 2em;
+  margin-left: auto;
+  display: block;
+  padding-bottom: 0.8em;
+}
+section {
+  margin-top: 1.2em;
+  background-color: white;
+  border-radius: 0.4em;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.196));
+  padding: 0.8em 0;
+}
+
+header {
+  margin-bottom: 2.6em;
+  text-align: center;
+}
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+h1:first-child {
+  font-weight: 200;
+}
+header p {
+  font-size: 1.02rem;
+  padding-top: 0.5em;
+  font-weight: 300;
+  color: var(--Very-Dark-Blue);
+}
+
+/* ------Card Section------ */
+.Supervisor-card {
+  border-top: 4px solid var(--Cyan);
+}
+.Team-card {
+  border-top: 4px solid var(--Red);
+}
+.Karma-card {
+  border-top: 4px solid var(--Orange);
+}
+.Calculator-card {
+  border-top: 4px solid var(--Blue);
+}
+
+/* ------Destop Design------- */
+@media (min-width: 600px) {
+  body {
+    max-width: 810px;
+  }
+  main .card-container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-gap: 20px;
+  }
+
+  header {
+    grid-column: 1/3;
+  }
+}
+
+@media (min-width: 950px) {
+  body {
+    margin: 0 auto;
+  }
+  main {
+    max-width: 1200px;
+    margin: 2.75em auto;
+  }
+  main .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) auto;
+    grid-template-rows: repeat(3, minmax 1fr);
+    justify-content: center;
+  }
+  header {
+    grid-column: 1/-1;
+    margin-bottom: 0;
+  }
+  header p {
+    font-size: 1.1rem;
+    max-width: 55%;
+    margin: 0 auto;
+    padding-bottom: 1em;
+  }
+
+  section {
+    width: 370px;
+  }
+  .Supervisor-card {
+    grid-row: 2/4;
+    align-self: center;
+  }
+
+  .Karma-card {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    margin-top: 0;
+  }
+  .Calculator-card {
+    grid-column: 3/4;
+    grid-row: 2/4;
+    align-self: center;
+  }
+}
